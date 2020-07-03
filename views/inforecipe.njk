@@ -1,0 +1,43 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+    <div class="space"></div>
+
+    <div class="text-receitas">
+        <span></span>
+    </div>
+
+    <section class="recipe">
+
+        <div class="card" id="{{item.id}}">
+            <div class="card-image-container {{'featured-wrapper' if item.featured}}">
+                <img src="{{item.image}}" alt="{{item.title}}">
+            </div>
+            <div class="card-content">
+                <p>{{item.title}}</p>
+            </div>
+            <div class="card-info">
+                <p>{{item.author}}</p>
+            </div>
+            <div class='ingredients'>
+                <h3>Ingredientes:</h3>
+                {{item.ingredients}}
+            </div>
+            <div class="preparation">
+                <h3>Como fazer:</h3>
+                {{item.preparation}}
+            </div>
+            <div class="information">
+                <h3>Informação:</h3>
+                {{item.information}}
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+{% endblock %}
+

@@ -1,0 +1,40 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+<div class="space"></div>
+
+    <div class="text-receitas">
+        <span></span>
+    </div>
+
+    <section class="cards">
+
+        {%for item in items%}
+        <div class="card" id="{{item.id}}">
+            <div class="card-image-container {{'featured-wrapper' if item.featured}}">
+                <img src="{{item.image}}" alt="{{item.title}}">
+                {% if item.featured %}
+                    <div class="featured">Destaque</div>
+                {% endif %}
+            </div>
+            <div class="card-content">
+                <p>{{item.title}}</p>
+            </div>
+            <div class="card-info">
+                <p>{{item.author}}</p>
+            </div>
+        </div>
+        {% endfor %}
+
+    </section>
+
+
+
+
+
+<script src="scripts.js"> </script>
+
+
+{% endblock %}
+    
